@@ -35,3 +35,29 @@ Privacy-by-design thinking, requirements documentation, data lifecycle analysis,
 - Personal Data Protection Committee (PDPC), Thailand — consult current announcements, notifications, and guidance.
 
 **Version:** 1.0 | **Status:** Sample / for demonstration only
+
+
+## Working Prototype
+
+An interactive front-end demonstration is available in the repository root:
+- `index.html` — application structure and screens
+- `styles.css` — responsive interface
+- `app.js` — consent controls, local persistence, activity log, and JSON export
+
+### Run locally
+Open `index.html` in a modern browser. No build step or dependencies are required.
+
+### Deploy with GitHub Pages
+1. Open **Settings → Pages** in this repository.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select branch `main` and folder `/ (root)`, then Save.
+4. Wait for the deployment and open the Pages URL shown in Settings → Pages.
+
+### Demo capabilities
+- Separate optional consent choices for analytics and marketing.
+- Save and review the latest preference state.
+- Withdraw optional consent.
+- View an activity log and export demo records as JSON.
+- Data is stored only in the current browser's Local Storage.
+
+> **Important:** This is a front-end educational prototype only. It has no authentication, server-side audit log, database, encryption-at-rest controls, or production security controls. Do not enter real personal, health, or sensitive data. The sample notice and legal wording must be reviewed and adapted before any real deployment.
