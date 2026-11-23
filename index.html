@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive privacy notice and consent management portfolio prototype">
+  <title>Privacy & Consent Management</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brandmark">P</span><span>Privacy<span class="muted">Portal</span><small>CONSENT MANAGEMENT DEMO</small></span></a><span class="demo-tag">PORTFOLIO PROTOTYPE</span></header>
+<main class="shell">
+  <section class="hero"><div><p class="eyebrow">PRIVACY BY DESIGN</p><h1>Your data. <em>Your choice.</em></h1><p class="lead">ตัวอย่างระบบแจ้งรายละเอียดการใช้ข้อมูลและจัดการความยินยอมอย่างโปร่งใส</p></div><div class="hero-art" aria-hidden="true"><div class="shield">✓</div><span>DATA<br>CONTROL</span></div></section>
+  <nav class="tabs" aria-label="Main navigation"><button class="tab active" data-view="consent">Consent Center</button><button class="tab" data-view="notice">Privacy Notice</button><button class="tab" data-view="admin">Admin Dashboard</button></nav>
+  <section id="view-consent" class="view">
+    <div class="section-head"><div><p class="eyebrow">01 / CONSENT CENTER</p><h2>จัดการความยินยอมของคุณ</h2><p class="muted">เลือกวัตถุประสงค์ที่อนุญาตได้อย่างอิสระ โดยไม่กระทบการให้บริการหลัก</p></div><span class="status-pill" id="overall-status">ยังไม่ได้บันทึก</span></div>
+    <form id="consent-form" class="panel">
+      <div class="field-grid"><label>ชื่อสำหรับตัวอย่าง<input id="person-name" maxlength="80" placeholder="เช่น Demo User" required></label><label>อีเมลตัวอย่าง<input id="person-email" type="email" maxlength="120" placeholder="demo@example.com" required></label></div>
+      <div class="notice-strip"><strong>โปรดทราบ</strong><span>ข้อมูลที่กรอกจะถูกเก็บไว้ใน Local Storage ของเบราว์เซอร์นี้เท่านั้น ไม่มีการส่งไปยังเซิร์ฟเวอร์</span></div>
+      <div class="consent-item required"><div><div class="item-title">การให้บริการที่จำเป็น <span class="tag required-tag">จำเป็น</span></div><p>ใช้ข้อมูลพื้นฐานเพื่อให้บริการ ตอบคำขอ และรักษาความปลอดภัยของระบบ</p><small>ฐานกฎหมายต้องพิจารณาตามกิจกรรมจริง ไม่ถือว่าเป็นความยินยอมโดยอัตโนมัติ</small></div><label class="switch"><input type="checkbox" checked disabled aria-label="จำเป็น"><span></span></label></div>
+      <div class="consent-item"><div><div class="item-title">การวิเคราะห์และปรับปรุงบริการ</div><p>ใช้ข้อมูลการใช้งานแบบจำลองเพื่อวิเคราะห์ประสิทธิภาพและปรับปรุงประสบการณ์</p></div><label class="switch"><input id="analytics" type="checkbox"><span></span></label></div>
+      <div class="consent-item"><div><div class="item-title">ข่าวสารและการประชาสัมพันธ์</div><p>ใช้ข้อมูลติดต่อเพื่อส่งข่าวสาร กิจกรรม หรือข้อมูลประชาสัมพันธ์</p></div><label class="switch"><input id="marketing" type="checkbox"><span></span></label></div>
+      <div class="form-footer"><span class="muted tiny">คุณสามารถเปลี่ยนหรือถอนความยินยอมที่เลือกได้ภายหลัง</span><button class="primary" type="submit">บันทึกการตั้งค่า <span>→</span></button></div>
+    </form>
+    <div class="panel history-panel"><div class="section-head compact"><div><h3>สถานะความยินยอมล่าสุด</h3><p class="muted tiny">แสดงสถานะจากเบราว์เซอร์เครื่องนี้</p></div><button class="text-button" id="revoke-all">ถอนความยินยอมทางเลือกทั้งหมด</button></div><div id="current-state" class="empty">ยังไม่มีข้อมูล กรุณาบันทึกการตั้งค่าก่อน</div></div>
+  </section>
+  <section id="view-notice" class="view hidden"><p class="eyebrow">02 / TRANSPARENCY</p><h2>Privacy Notice</h2><p class="muted">ตัวอย่างประกอบการเรียนรู้และ Portfolio — ไม่ใช่ประกาศความเป็นส่วนตัวสำหรับใช้งานจริง</p><div class="panel notice-content">
+    <h3>1. ข้อมูลที่อาจมีการประมวลผล</h3><p>ข้อมูลระบุตัวบุคคลและข้อมูลติดต่อที่ผู้ใช้กรอก ข้อมูลการใช้งานที่จำเป็นต่อการให้บริการ และตัวเลือกความยินยอมที่ผู้ใช้กำหนด</p>
+    <h3>2. วัตถุประสงค์</h3><ul><li>ดำเนินการให้บริการและตอบคำขอ</li><li>วิเคราะห์และปรับปรุงบริการ เมื่อมีฐานกฎหมายที่เหมาะสม</li><li>ส่งข่าวสารหรือประชาสัมพันธ์เมื่อผู้ใช้เลือกยินยอม</li></ul>
+    <h3>3. การเก็บรักษาและความปลอดภัย</h3><p>ใน Prototype นี้ ข้อมูลจะอยู่ใน Local Storage ของเบราว์เซอร์เท่านั้น ไม่มีระบบ Backend การเก็บรักษาจริงต้องกำหนดระยะเวลา มาตรการรักษาความมั่นคงปลอดภัย และการลบข้อมูลให้เหมาะสม</p>
+    <h3>4. สิทธิของเจ้าของข้อมูล</h3><p>เจ้าของข้อมูลอาจมีสิทธิขอเข้าถึง แก้ไข ลบ คัดค้าน จำกัดการประมวลผล หรือถอนความยินยอมตามเงื่อนไขของกฎหมายที่เกี่ยวข้อง</p>
+    <h3>5. ติดต่อผู้ควบคุมข้อมูล</h3><p>สำหรับตัวอย่างนี้ โปรดแทนที่ด้วยชื่อหน่วยงาน ช่องทางติดต่อ และรายละเอียดผู้รับผิดชอบก่อนนำไปใช้จริง</p>
+    <div class="notice-strip"><strong>ข้อจำกัดของ Demo</strong><span>เนื้อหานี้เป็นข้อมูลสมมติทั่วไป ต้องปรับให้ตรงกับกิจกรรมประมวลผลจริงและผ่านการตรวจสอบด้านกฎหมาย/PDPA ก่อนใช้งาน</span></div>
+  </div></section>
+  <section id="view-admin" class="view hidden"><p class="eyebrow">03 / ADMIN VIEW</p><h2>Consent Dashboard</h2><p class="muted">ภาพรวมข้อมูลตัวอย่างที่บันทึกไว้ในเบราว์เซอร์ปัจจุบัน</p><div class="stats"><div class="stat"><span>Consent records</span><strong id="stat-total">0</strong></div><div class="stat"><span>Analytics opted-in</span><strong id="stat-analytics">0</strong></div><div class="stat"><span>Marketing opted-in</span><strong id="stat-marketing">0</strong></div></div><div class="panel"><div class="section-head compact"><h3>Consent activity log</h3><div class="actions"><button class="secondary" id="export-data">Export JSON</button><button class="text-button danger" id="clear-data">Clear demo data</button></div></div><div class="table-wrap"><table><thead><tr><th>วันที่ / เวลา</th><th>ผู้ใช้ตัวอย่าง</th><th>Analytics</th><th>Marketing</th><th>กิจกรรม</th></tr></thead><tbody id="log-body"><tr><td colspan="5" class="empty">ยังไม่มีรายการ</td></tr></tbody></table></div></div><p class="tiny muted footnote">Dashboard นี้ไม่มีระบบยืนยันตัวตนผู้ดูแลระบบ และไม่เหมาะกับข้อมูลจริง</p></section>
+  <footer><span>Privacy Portal · Educational Prototype</span><span>Built with HTML · CSS · JavaScript</span></footer>
+</main><div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>
